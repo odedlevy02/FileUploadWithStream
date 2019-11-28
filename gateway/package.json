@@ -1,0 +1,28 @@
+{
+  "name": "gateway",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --recursive"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "dotenv-display": "^1.0.1",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "request": "^2.88.0",
+    "swagger-ui-express": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.2",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.14",
+    "@types/sinon": "^7.5.1",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "swagger": "2.0",
+    "info": {
+           "version": "1.0.0",
+           "title": "Fileserver",
+           "description": "Fileserver"
+           },
+    "schemes": [
+           "http",
+           "https"
+    ],
+    "paths": {
+    }
+}
