@@ -35,35 +35,8 @@ class FilesRouter {
   }
 
   sendFileWithout = (req, res, next) => {
-    var form = new formidable.IncomingForm()
-    form.onPart = function (part) {
-      if (part.filename) {
-        // let formidable handle all non-file parts
-        let url = "http://localhost:3001/files/sendFile"
-        let formData = { file: part, data: "{}" }
-        request.post({ url, formData }).pipe(res)
-        return;
-      }
-    }
-    // form.on('fileBegin', function(name, file) {
-    //   console.log("file begin")
-    //   let fileStream = fs.createReadStream(file.path,{ highWaterMark: 1024000})
-    //   let url = "http://localhost:3001/files/sendFile"
-    //   let formData={file:fileStream,data:"{}"}
-    //   request.post({url,formData}).pipe(res)
-    // });
-    form.on('progress', function (bytesReceived, bytesExpected) {
-      console.log(`bytesReceived: ${bytesReceived}, bytesExpected: ${bytesExpected}`)
-    });
-    form.on('end', function () {
-      //res.status(200).send({res:"completed"})
-    });
-    form.on('error', function (err) {
-      res.status(500).send({ message: err.message })
-    });
-
-    form.parse(req)
-
+    let url = "http://localhost:3001/files/sendFile"
+    req.pipe(request(url)).pipe(res)
   }
 
   sendFileFromFolder = (req, res, next) => {

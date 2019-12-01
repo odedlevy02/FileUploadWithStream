@@ -18,7 +18,7 @@ class FilesRouter{
       }
     })
     var upload = multer({ storage: storage })
-    this.router.post("/sendFile",upload.single("file"), this.sendFile);
+    this.router.post("/sendFile",upload.any(), this.sendFile);
     
   }
 
