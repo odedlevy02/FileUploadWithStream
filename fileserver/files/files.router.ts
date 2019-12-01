@@ -18,10 +18,11 @@ class FilesRouter{
       }
     })
     var upload = multer({ storage: storage })
-    this.router.post("/sendFile",upload.single("file"), this.sample);
+    this.router.post("/sendFile",upload.single("file"), this.sendFile);
+    
   }
 
-  sample=(req,res,next)=>{
+  sendFile=(req,res,next)=>{
     res.status(200).send({res:"Response"})
   }
 }

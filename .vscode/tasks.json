@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gateway",
+            "type": "typescript",
+            "tsconfig": "gateway/tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "fileserver",
+            "type": "typescript",
+            "tsconfig": "fileserver/tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "buildall",
+            "dependsOn":["gateway","fileserver"],
+            "problemMatcher": []
+        }
+    ]
+}
